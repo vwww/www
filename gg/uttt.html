@@ -1,0 +1,186 @@
+---
+layout: gg
+page: uttt
+has_extra_css: 1
+has_extra_script: 1
+---
+<div id="content-left">
+	<div id="content-left-in">
+		<div id="lobby">
+			<h3 id="lobby-status" class="title">WAITING_TITLE_DISCONNECTED</h3>
+			<p><input id="lobby-button" type="button" value="BTN_READY" onclick="uttt.ui.lobby_ready()" /> <span id="lobby-status-small">WAITING_DISCONNECTED</span></p>
+			<p>
+				<label><input type="checkbox" id="lobby-option1" /> <span id="lobby-option-span0">STATIC_MOD0</span></label>
+				<label><input type="checkbox" id="lobby-option2" /> <span id="lobby-option-span1">STATIC_MOD1</span></label>
+				<label><input type="checkbox" id="lobby-option3" /> <span id="lobby-option-span2">STATIC_MOD2</span></label>
+				<label><input type="checkbox" id="lobby-option4" /> <span id="lobby-option-span3">STATIC_MOD3</span></label>
+			</p>
+		</div>
+		<div id="uttt-game">
+			<h3 id="uttt-game-status" class="title">__FUTURE__INGAME_TITLE_WAIT</h3>
+			<p><input id="game-btn-disconnect" type="button" value="INGAME_BTN_DISCONNECT" onclick="uttt.ui.ingame_disconnect()" /> <input id="game-btn" type="button" value="INGAME_BTN_READY" /> <span id="game-status">Your opponent is ready!</span></p>
+			<table id="uttt-main">
+				<tr>
+					<td>
+						<table id="uttt-0" class="p1">
+							<tr><td class="p1"></td><td></td><td></td></tr>
+							<tr><td></td><td class="p1"></td><td></td></tr>
+							<tr><td></td><td></td><td class="p1"></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="uttt-1" class="p2">
+							<tr><td></td><td></td><td class="p2"></td></tr>
+							<tr><td></td><td class="p2"></td><td></td></tr>
+							<tr><td class="p2"></td><td></td><td></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="uttt-2">
+							<tr><td class="p1"></td><td class="p2"></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table id="uttt-3">
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="uttt-4" class="p3">
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td class="p3"></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="uttt-5">
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table id="uttt-6">
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="uttt-7">
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="uttt-8">
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+							<tr><td></td><td></td><td></td></tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+			<div id="replay-progress">
+				<span id="back" onclick="uttt.replay.back()">&lt;</span>
+				<span id="background"><span id="progress" style="width:100%"></span></span>
+				<span id="forward" onclick="uttt.replay.forward()">&gt;</span>
+			</div>
+		</div>
+	</div> <!-- /content-left-in -->
+</div> <!-- /content-left -->
+
+<hr class="noscreen" />
+
+<div id="content-right">
+
+	<!-- Ads 125x125 -->
+	<div class="box">
+		<span class="f-right"><a href="#"><img src="static/tmp/125x125.gif" width="125" height="125" alt="" /></a></span>
+		<span class="f-left"><a href="#"><img src="static/tmp/125x125.gif" width="125" height="125" alt="" /></a></span>
+	</div>
+
+	<!-- Most readed articles -->
+	<div class="box-02-top"></div>
+	<div class="box-02-top-b box">
+		<span class="f-left"><strong>Players</strong></span>
+	</div> <!-- /box-02-top-b -->
+	<div class="box-02 box">
+
+		<ul class="mostreaded">
+			<li><span class="f-right"><span id="players-local-wins">0</span>&times; wins</span><a id="players-local" href="" onclick="return false"></a> (you)</li>
+			<li><span class="f-right"><span id="players-remote-wins">0</span>&times; wins</span><a id="players-remote" href="" onclick="return false"></a> (opponent)</li>
+		</ul>
+
+	</div> <!-- /box-02 -->
+	<div class="box-02-bottom"></div>
+	
+	<!-- News -->
+	<div id="mod-box">
+		<div class="box-01-top"></div>
+		<div class="box-01-top-b box">
+			<span class="f-right">Change the rules!</span>
+			<span class="f-left"><strong>Modifiers</strong></span>
+		</div> <!-- /box-01-top-b -->
+		<div class="box-01">
+
+			<div class="">
+				<dl class="news box">
+					<dt id="mod-indicator0">YOU<br /><span>OFF</span></dt>
+					<dd id="mod-desc0">
+						<span id="mod-name0">STATIC_MOD0</span><br />
+						STATIC_MOD_DESC0<br />
+						<span id="mod0">MOD0<strong>_CHOICE</strong></span>
+					</dd>
+				</dl>
+			</div> <!-- /bg -->
+
+			<div class="bg">
+				<dl class="news box">
+					<dt id="mod-indicator1">YOU<br /><span>ON</span></dt>
+					<dd id="mod-desc1">
+						<span id="mod-name1">STATIC_MOD1</span><br />
+						STATIC_MOD_DESC1<br />
+						<span id="mod1">MOD1<strong>_CHOICE</strong></span>
+					</dd>
+				</dl>
+			</div> <!-- /bg -->
+
+			<div class="">
+				<dl class="news box">
+					<dt id="mod-indicator2">OPP<br /><span>OFF</span></dt>
+					<dd id="mod-desc2">
+						<span id="mod-name2">STATIC_MOD2</span><br />
+						STATIC_MOD_DESC2<br />
+						<span id="mod2">MOD2<strong>_CHOICE</strong></span>
+					</dd>
+				</dl>
+			</div> <!-- /bg -->
+
+			<div class="bg">
+				<dl class="news box">
+					<dt id="mod-indicator3">OPP<br /><span>ON</span></dt>
+					<dd id="mod-desc3">
+						<span id="mod-name3">STATIC_MOD3</span><br />
+						STATIC_MOD_DESC3<br />
+						<span id="mod3">MOD3<strong>_CHOICE</strong></span>
+					</dd>
+				</dl>
+			</div> <!-- /bg -->
+
+		</div> <!-- /box-01 -->
+		<div class="box-01-bottom"></div>
+	</div>
+
+</div> <!-- /content-right -->
+
+<hr class="noscreen" />

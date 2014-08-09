@@ -1,0 +1,57 @@
+table#uttt-main {
+	border-spacing:15px;
+}
+
+table#uttt-main table {
+	margin:2px;
+	border-spacing:4px;
+	background-color:#a9a9a9;
+}
+
+table#uttt-main table.p1 {background-color:#008000;}
+table#uttt-main table.p2 {background-color:#ffa07a;}
+table#uttt-main table.p3 {background-color:#add8e6;}
+
+table#uttt-main table td {
+	width:40px;
+	height:40px;
+	background-color:#696969;
+	opacity:0.6;
+	cursor: not-allowed;
+}
+
+table#uttt-main table td.p1 {background-color:#9acd32; opacity:1; cursor: auto;}
+table#uttt-main table td.p2 {background-color:#ff7f50; opacity:1; cursor: auto;}
+table#uttt-main table td.p3 {background-color:#98afc7; opacity:1; cursor: pointer;}
+
+.news dt span {text-transform:uppercase;}
+
+div#replay-progress{
+	width: 430px;
+}
+div#replay-progress span{
+	display: inline-block;
+	height: 20px;
+	text-align: center;
+	float: left;
+}
+div#replay-progress #background{
+	width: 350px;
+	background-color: #888;
+	text-align: left;
+}
+div#replay-progress #back{
+	background-color: #F59322;
+	width: 30px;
+	cursor: pointer;
+	margin-left: 20px;
+}
+div#replay-progress #forward{
+	background-color: #D2F522;
+	width: 30px;
+	cursor: pointer;
+	float: right;
+}
+div#replay-progress #progress{
+	background-color: #000;
+}

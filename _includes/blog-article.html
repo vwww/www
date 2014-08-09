@@ -1,0 +1,30 @@
+<header>
+	<h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	<time datetime="{{ post.date | date_to_xmlschema }}">
+		<span class="day">{{ post.date | date: "%e" }}</span><span class="month">{{ post.date | date: "%b %Y" }}</span><br />
+		<span class="time">{{ post.date | date: "%I:%M %p %Z" }}</span>
+	</time>
+</header>
+<div class="entry-content">
+	{{ content }}
+	<div class="sharing">
+		Posted on {{ post.date | date: "%A, %B %d, %Y" }} at 
+		{% if post.date | date: "%S" == '00' %}
+			{{ post.date | date: "%I:%M %p %Z" }}.
+		{% else %}
+			{{ post.date | date: "%I:%M:%S %p %Z" }}.
+		{% endif %}
+	{% if post.mdate %}
+		Last modified on {{ post.mdate | date: "%A, %B %d, %Y" }} at 
+		{% if post.mdate | date: "%S" == '00' %}
+			{{ post.mdate | date: "%I:%M %p %Z" }}.
+		{% else %}
+			{{ post.mdate | date: "%I:%M:%S %p %Z" }}.
+		{% endif %}
+	{% endif %}
+	</div>
+	<footer class="meta">
+		<div class="tags">{% include blog-tags.html %}</div>
+		<a class="permalink" href="{{ post.url }}">Permalink</a>
+	</footer>
+</div>

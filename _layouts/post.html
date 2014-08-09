@@ -1,0 +1,7 @@
+---
+layout: blog
+---
+{% assign post = page %}
+{% assign year = page.date | date: '%Y' %}
+{% include blog-year-count.html y=year %}
+<article class="post">{% include blog-article.html %}</article>

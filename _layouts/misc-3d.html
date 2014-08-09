@@ -1,0 +1,155 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="en" />
+	<meta name="robots" content="all,follow" />
+
+	<meta name="author" lang="en" content="Victor Zheng [victorz.ca]" />
+	<meta name="copyright" lang="en" content="Victor Zheng (victorz)" />
+
+	<meta name="description" content="Some of my 3D rendered shapes, and environments!" />
+	<meta name="keywords" content="victor,3d,autodesk,auto,desk,360,cloud,rendering,autocad,revit,architecture,design,planning,construction,construct,engineering,engineer,designing,render,shape,environment" />
+
+	<link rel="icon" type="image/x-icon" href="http://p.cdn.victorz.ca/misc/3d/favicon.ico"/>
+	<link rel="stylesheet" media="screen,projection" type="text/css" href="http://p.cdn.victorz.ca/misc/3d/s/main.css" />
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="http://p.cdn.victorz.ca/misc/3d/s/main-msie.css" /><![endif]-->
+	<link rel="stylesheet" media="screen,projection" type="text/css" id="vss_style" href="http://p.cdn.victorz.ca/misc/3d/s/2.css" />
+	<meta name="vss_1" content="http://p.cdn.victorz.ca/misc/3d/s/1.css" />
+	<meta name="vss_2" content="http://p.cdn.victorz.ca/misc/3d/s/2.css" />
+	<meta name="vss_3" content="http://p.cdn.victorz.ca/misc/3d/s/3.css" />
+	<meta name="vss_4" content="http://p.cdn.victorz.ca/misc/3d/s/4.css" />
+	<meta name="vss_5" content="http://p.cdn.victorz.ca/misc/3d/s/5.css" />
+	<meta name="vss_6" content="http://p.cdn.victorz.ca/misc/3d/s/6.css" />
+	<meta name="vss_7" content="http://p.cdn.victorz.ca/misc/3d/s/7.css" />
+	<link rel="stylesheet" media="print" type="text/css" href="http://p.cdn.victorz.ca/misc/3d/s/print.css" />
+
+	<script async type="text/javascript" src="http://p.cdn.victorz.ca/js/style-switcher.js"></script>
+	<script async type="text/javascript" src="http://p.cdn.victorz.ca/js/copyyear.js"></script>
+
+	{% assign active_area = site.3d.areas[page.area] %}
+	{% assign active_page = active_area.pages[page.page] %}
+	<title>Victor's 3D &ndash; {{ active_page }} ({{ active_area.name }})</title>
+</head>
+
+<body>
+<div id="main">
+
+	<div id="main-in">
+
+		<!-- Header -->
+		<div id="header" class="box">
+
+			<!-- Your logo -->
+			<h1 id="logo"><a href="{{ site.3d.location }}" title="[Go to homepage]">Victor's <span>3D</span>!!!</a></h1>
+
+			<hr class="noscreen" />
+
+			<!-- Hidden navigation -->
+			<p class="noscreen noprint"><em>Quick links: <a href="#content">content</a>, <a href="#navigation">navigation</a>, <a href="#ads">advertisments</a>.</em></p>
+
+			<hr class="noscreen" />
+
+			<!-- Search
+			<div id="search" class="noprint">
+				<form action="http://victorz.ca" method="post">
+					<div>
+
+						<span class="noscreen">Fulltext:</span>
+						<input type="text" size="30" name="query" id="search-input" />
+
+						<input type="submit" value="Visit Victor's Site!" id="search-submit" />
+					</div>
+				</form>
+			</div> <!-- /search -->
+
+			<div id="ads" class="noprint">
+				<script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=misc_3d_links"></script>
+			</div>
+
+			<hr class="noscreen" />
+
+			<!-- Tabs -->
+			<ul id="tabs" class="box">
+				<!-- Active tab (highlighted) -->
+				<li id="tabs-active1"><a href="#orange" onclick="return ssn(1)">Orange</a></li>
+				<li id="tabs-active2"><a href="#green" onclick="return ssn(2)">Green</a></li>
+				<li id="tabs-active3"><a href="#yellow" onclick="return ssn(3)">Yellow</a></li>
+				<li id="tabs-active4"><a href="#pink" onclick="return ssn(4)">Pink</a></li>
+				<li id="tabs-active5"><a href="#blue" onclick="return ssn(5)">Blue</a></li>
+				<li id="tabs-active6"><a href="#red" onclick="return ssn(6)">Red</a></li>
+				<li id="tabs-active7"><a href="#brown" onclick="return ssn(7)">Brown</a></li>
+			</ul>
+
+		</div> <!-- /header -->
+
+		<hr class="noscreen" />
+
+		<!-- 2 columns (Content + Sidebar) -->
+		<div id="cols" class="box">
+
+			<!-- Content -->
+			<div id="content">
+
+				<span class="noprint"><script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=misc_3d_head"></script></span>
+				{% if page.area == 'base' %}
+					{% include misc-3d-base.html %}
+				{% elsif 'advanced/basic/coffee/diaphanous' | split:'/' contains page.area %}
+					{% include misc-3d-autodesk.html %}
+				{% else %}
+					[UNKNOWN CONTENT]
+				{% endif %}
+				<span class="noprint"><script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=misc_3d_foot"></script></span>
+
+			</div> <!-- /content -->
+
+			<hr class="noscreen" />
+
+			<!-- Sidebar -->
+			<div id="aside">
+
+				<!-- Navigation -->
+				<h3 class="title" id="navigation">Navigation</h3>
+
+				<ul class="nav">
+				{% for area in site.3d.areas %}
+				<li{% if area[0] == page.area %} id="nav-active"{% endif %}>
+					<a href="{{ site.3d.location }}{% if area[0] != 'base' %}{{ area[0] }}/{% endif %}">{{ area[1].name }}</a>
+				</li>
+				{% endfor %}
+				</ul>
+
+				{% assign total_pages = active_area.pages | size %}
+				{% if total_pages > 1 %}
+				<!-- Active Item -->
+				<h3 class="title">{{ active_area.name }}</h3>
+
+				<ul class="nav">
+				{% for p in active_area.pages %}
+				<li{% if p[0] == page.page %} id="nav-active"{% endif %}>
+					<a href="{% include misc-3d-_url_page.html %}">{{ p[1] }}</a>
+				</li>
+				{% endfor %}
+				</ul>
+				{% endif %}
+
+			</div> <!-- /aside -->
+
+		</div> <!-- /cols -->
+
+		<hr class="noscreen" />
+
+		<!-- Footer -->
+		<div id="footer">
+			<p class="f-right">We use <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">valid CSS 3</a>! Template by <a href="http://www.nuviotemplates.com/" rel="nofollow">Nuvio Templates</a>.</p>
+
+			<p>Copyright &copy; 2008-<span id="copyyear">now</span> <a href="http://victorz.ca">Victor</a>.</p>
+
+		</div> <!-- /footer -->
+
+	</div> <!-- /main-in -->
+
+</div> <!-- /main -->
+</body>
+</html>

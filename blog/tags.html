@@ -1,0 +1,47 @@
+---
+layout: blog
+title: Tags
+---
+<header id="archive-header">
+	<h1 class="alignleft">Tags</h1>
+	{% include blog-search.html %}
+</header>
+
+{% capture tags_sorted %}{% for tag in site.tags %}{{ tag[0] }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tags_sorted = tags_sorted | split:',' | sort %}
+
+<div class="tag-cloud">
+{% for tag_cur in tags_sorted %}
+<a href="#{{ tag_cur }}"><span>{{ tag_cur }}</span><sup>{{site.tags[tag_cur].size}}</sup></a>
+{% endfor %}
+</div>
+
+{% assign post_count = site.posts | size %}
+{% for tag_num in (1..post_count) reversed %}
+{% for tag_cur in tags_sorted %}
+{% if site.tags[tag_cur].size != tag_num %}{% continue %}{% endif %}
+	<header class="tag-header">
+		<h1 id="{{ tag_cur }}">{{ tag_cur }} <sup>{{ site.tags[tag_cur].size }}</sup></h1>
+	</header>
+	{% assign year = nil %}
+	{% for post in site.tags[tag_cur] %}
+		{% assign this_year = post.date | date: "%Y" %}
+		{% unless year == this_year %}
+			{% assign year = this_year %}
+			{% unless forloop.first %}
+				</section>
+			{% endunless %}
+			{% include blog-year-count.html y=this_year %}
+			<section class="archives"><div class="year">{{ this_year }}</div>
+		{% endunless %}
+		<article class="archive">
+			<h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+			<footer>
+				<time datetime="{{ post.date | datetime | date_to_xmlschema }}">{{ post.date | date: "%b %e %Y" }}</time>
+				<div class="tags">{% include blog-tags.html %}</div>
+			</footer>
+		</article>
+	{% endfor %}
+	</section>
+{% endfor %}
+{% endfor %}

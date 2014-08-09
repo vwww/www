@@ -1,0 +1,99 @@
+---
+layout: gg
+page: index
+---
+<div id="content-left">
+	<div id="content-left-in">
+
+		<!-- Recent Articles -->
+		<h3 class="title">Victor's Google Games</h3>
+
+		{% for p in site.gg.pages %}
+		{% if p[1].game_desc and p[1].subpages contains 'help' %}
+		<!-- Article -->
+		<div class="article box">
+			<div class="article-img">
+				<img src="static/img/game-icons/{{ p[0] }}.png" width="180" height="135" alt="{{ p[0] }}" />
+			</div> <!-- /article-img -->
+			<div class="article-desc">
+				<h3><a href="{{ p[0] }}.html">{{ p[1].title }}</a></h3>
+				<p class="info">Read the <strong><a href="{{ p[0] }}-help.html">Instructions</a></strong></p>
+				<p class="nomb">{{ p[1].game_desc }}</p>
+			</div>
+		</div> <!-- /article -->
+		{% endif %}
+		{% endfor %}
+
+		<!-- <p class="t-right"><a href="#" class="more">Older articles</a></p> -->
+
+	</div> <!-- /content-left-in -->
+</div> <!-- /content-left -->
+
+<hr class="noscreen" />
+
+<div id="content-right">
+
+	<!-- Ads 125x125 -->
+	<div class="box">{% include gg-ads.html %}</div>
+{% if False %}
+	<!-- News -->
+	<div class="box-01-top"></div>
+	<div class="box-01-top-b box">
+		<span class="f-right">Updated: 15.7.2008 @ 15:34</span>
+		<span class="f-left"><strong>News</strong></span>
+	</div> <!-- /box-01-top-b -->
+	<div class="box-01">
+
+		<dl class="news box">
+			<dt>SEP<br /><span>23</span></dt>
+			<dd><span>@ 15:34</span><br />Lorem ipsum dolor sit, consectetuer ad. Duisa eros. Nunc imperdiet, lacus quas posule accumsan, elita nunc eleifendel augue id uipera enim augue id eros.</dd>
+		</dl>
+
+		<div class="bg">
+			<dl class="news box">
+				<dt>SEP<br /><span>23</span></dt>
+				<dd><span>@ 15:34</span><br />Lorem ipsum dolor sit, consectetuer ad. Duisa eros. Nunc imperdiet, lacus quas posule accumsan, elita nunc eleifendel augue id uipera enim augue id eros.</dd>
+			</dl>
+		</div> <!-- /bg -->
+
+		<dl class="news box">
+			<dt>SEP<br /><span>23</span></dt>
+			<dd><span>@ 15:34</span><br />Lorem ipsum dolor sit, consectetuer ad. Duisa eros. Nunc imperdiet, lacus quas posule accumsan, elita nunc eleifendel augue id uipera enim augue id eros.</dd>
+		</dl>
+
+		<div class="bg">
+			<dl class="news box">
+				<dt>SEP<br /><span>23</span></dt>
+				<dd><span>@ 15:34</span><br />Lorem ipsum dolor sit, consectetuer ad. Duisa eros. Nunc imperdiet, lacus quas posule accumsan, elita nunc eleifendel augue id uipera enim augue id eros.</dd>
+			</dl>
+		</div> <!-- /bg -->
+
+		<dl class="news box">
+			<dt>SEP<br /><span>23</span></dt>
+			<dd><span>@ 15:34</span><br />Lorem ipsum dolor sit, consectetuer ad. Duisa eros. Nunc imperdiet, lacus quas posule accumsan, elita nunc eleifendel augue id uipera enim augue id eros.</dd>
+		</dl>
+
+	</div> <!-- /box-01 -->
+	<div class="box-01-bottom"></div>
+
+	<!-- Most readed articles -->
+	<div class="box-02-top"></div>
+	<div class="box-02-top-b box">
+		<span class="f-left"><strong>Most readed articles</strong></span>
+	</div> <!-- /box-02-top-b -->
+	<div class="box-02 box">
+
+		<ul class="mostreaded">
+			<li><span class="f-right">1925&times;</span><a href="#">Lomem ipsum dolor sit amet</a></li>
+			<li><span class="f-right">1925&times;</span><a href="#">Lomem ipsum dolor sit amet</a></li>
+			<li><span class="f-right">1925&times;</span><a href="#">Lomem ipsum dolor sit amet</a></li>
+			<li><span class="f-right">1925&times;</span><a href="#">Lomem ipsum dolor sit amet</a></li>
+			<li><span class="f-right">1925&times;</span><a href="#">Lomem ipsum dolor sit amet</a></li>
+		</ul>
+
+	</div> <!-- /box-02 -->
+	<div class="box-02-bottom"></div>
+{% endif %}
+</div> <!-- /content-right -->
+
+<hr class="noscreen" />

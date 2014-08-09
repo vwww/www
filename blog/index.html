@@ -1,0 +1,31 @@
+---
+layout: blog
+---
+<header id="archive-header">
+	<h1 class="alignleft">{% if paginator.page == 1 %}{{ site.blog.title }}{% else %}Page {{ paginator.page }}{% endif %}</h1>
+	{% include blog-search.html %}
+</header>
+
+
+{% for post in paginator.posts %}
+{% assign this_year = post.date | date: '%Y' %}
+{% unless current_year == this_year %}
+	{% assign current_year = this_year %}
+	{% include blog-year-count.html y=this_year %}
+{% endunless %}
+{% capture content %}
+	{{ post.excerpt }}
+	{% if post.excerpt != post.content %}
+	<p class="readmore"><a href="{{ post.url }}">Read more&hellip;</a></p>
+	{% endif %}
+{% endcapture %}
+<article class="post">{% include blog-article.html %}</article>
+{% endfor %}
+
+{% if paginator.previous_page or paginator.next_page %}
+<nav id="pagenavi">
+	{% if paginator.previous_page %}<a href="{{paginator.previous_page_path}}" class="prev alignleft">Prev</a>{% endif %}
+	{% if paginator.next_page %}<a href="{{paginator.next_page_path}}" class="next alignright">Next</a>{% endif %}
+	<div class="clearfix"></div>
+</nav>
+{% endif %}

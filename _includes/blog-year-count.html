@@ -1,0 +1,7 @@
+{% assign yc = 0 %}
+{% for p in site.posts %}
+	{% assign py = p.date | date: '%Y' %}
+	{% if include.y == py %}
+		{% assign yc = yc | plus:1 %}
+	{% endif %}
+{% endfor %}

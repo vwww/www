@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Victor's Jokes</title>
+		<meta charset="utf-8">
+		<script>
+			var showText = 'Click to show content!';
+			function toggle(fnm) {
+				if (document.getElementById(fnm).className == '') {
+					document.getElementById(fnm).className = 'hide';
+					document.getElementById(fnm + "_").innerHTML = showText;
+				} else {
+					document.getElementById(fnm).className = '';
+					document.getElementById(fnm + "_").innerHTML = '';
+				}
+			}
+		</script>
+		<style>
+			.hide { display:none }
+			fieldset { font-family:Arial }
+			legend { font-weight:bold }
+			span.asker { color:red }
+			span.reply { color:green }
+			p.center { text-align:center }
+		</style>
+		<link type="image/icon" rel="icon" href="http://p.cdn.victorz.ca/misc/jokes/favicon.ico">
+	</head>
+	<body>
+		<h1><img src="http://p.cdn.victorz.ca/misc/jokes/logo.png" alt="Jokes"></h1>
+			<h2>Sponsored Ads:</h2>
+			<p class="center"><script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=misc_jokes_head"></script></p>
+			<h2>Latest Joke:</h2>
+				<fieldset onclick="toggle(7)"><legend>Voldemort (Knock-Knock)</legend>
+					<a id="7"><!-- class="hide">-->
+						<i>This is for the Harry Potter fans.</i><br>
+						<span class="asker">Knock knock</span><br>
+						<span class="reply">Who's there?</span><br>
+						<span class="asker">You know</span><br>
+						<span class="reply">You know who?</span><br>
+						<span class="asker">&hellip;</span>
+					</a>
+					<a id="7_"><script>//document.write(showText);</script></a>
+				</fieldset>
+			<h3>Older Jokes:</h3>
+				<fieldset onclick="toggle(6)"><legend>[Image] Four-Stroke Engine</legend>
+					<a id="6" class="hide">
+						<b>What do you think of when I say the phrase, <i>&ldquo;Suck, Squeeze, Bang, Blow&rdquo;</i>? It's completely child-friendly!</b><br>
+						<i>It might not have been what you expected. In addition, it's also mechanic friendly.</i><br>
+						<img src="http://p.cdn.victorz.ca/misc/jokes/ssbb.png" alt="Diagram for Suck, Squeeze, Bang, Blow">
+					</a>
+					<a id="6_"><script>document.write(showText);</script></a>
+				</fieldset>
+				<fieldset><legend>Uses of Internet Explorer (which really sucks)</legend>
+					<a href="ie.html">Click me to access</a>
+				</fieldset>
+				<fieldset onclick="toggle(5)"><legend>[Image] DVD Rewinder</legend>
+					<a id="5" class="hide">
+						<i>No matter how much you turn the DVD, it never rewinds. The laser's position is all that matters.</i><br>
+						<img src="http://p.cdn.victorz.ca/misc/jokes/dvdrewind.jpg" alt="DVD rewinder">
+					</a>
+					<a id="5_"><script>document.write(showText);</script></a>
+				</fieldset>
+				<fieldset onclick="toggle(4)"><legend>[Image] Illiterate Sign</legend>
+					<a id="4" class="hide">
+						<i>If you are illiterate, you can neither read the sign nor write them a letter.</i><br>
+						<img src="http://p.cdn.victorz.ca/misc/jokes/illiterate.jpg" alt="Illiterate help sign">
+					</a>
+					<a id="4_"><script>document.write(showText);</script></a>
+				</fieldset>
+				<fieldset onclick="toggle(3)"><legend>Shoot, don't Stab</legend>
+					<a id="3" class="hide">
+						<u>You could have shot him!</u><br>
+						But no, you had to <b>stab</b> him!<br>
+						<i>However, either way, the target dies in that game!</i>
+					</a>
+					<a id="3_"><script>document.write(showText);</script></a>
+				</fieldset>
+				<fieldset onclick="toggle(2)"><legend>[Image] (Website) Under Construction &mdash; <i>The Simpsons</i></legend>
+					<a id="2" class="hide">
+						A nice picture from <i>The Simpsons</i> for when your site is under construction<br>
+						<img src="http://p.cdn.victorz.ca/misc/jokes/simponsconstruct.png" alt="Under construction"><br>
+						<i>Homer does such a poor job at construction!</i>
+					</a>
+					<a id="2_"><script>document.write(showText);</script></a>
+				</fieldset>
+				<fieldset onclick="toggle(1)"><legend>Pay Me (Knock-Knock)</legend>
+					<a id="1" class="hide">
+						<span class="asker">Knock knock</span><br>
+						<span class="reply">Who's there?</span><br>
+						<span class="asker">Pay</span><br>
+						<span class="reply">Pay who?</span><br>
+						<span class="asker">Pay <b><u><i>ME!!!</i></u></b></span>
+					</a><a id="1_"><script>document.write(showText);</script></a>
+				</fieldset>
+		<br>
+		<p class="center">
+			<script src="http://d.cdn.victorz.ca/online.js.php?o=b"></script>
+			<br>
+			<script src="http://d.cdn.victorz.ca/a.php?a=misc_jokes_1"></script>
+			<br>
+			<script src="http://d.cdn.victorz.ca/a.php?a=misc_jokes_2"></script>
+		</p>
+	</body>
+</html>

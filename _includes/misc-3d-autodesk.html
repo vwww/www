@@ -1,0 +1,81 @@
+<?
+function d2url($a,$p,$thumb=false,$k='none'){
+	return "http://theonlypwner.github.com/vwww-3d/$a/$p".($thumb ? '_' : '')."/$k.png";
+}
+?>
+{% if page.page == 'base' %}
+{% assign show_all = true %}
+{% else %}
+{% assign show_all = false %}
+{% endif %}
+<h2 class="nomb">{{ active_area.name }}{% unless show_all %} &mdash; {{ active_page }}{% endunless %}</h2>
+
+<!-- 2 same width columns (50%/50%) -->
+<div class="box">
+
+	<!-- Left column -->
+	<div class="col50">
+{% if show_all %}
+		<h3>Camera Selection</h3>
+{% for p in active_area.pages %}
+{% if p[0] != 'base' %}
+		<p class="box clear"><a href="{% include misc-3d-_url_img.html p=1 %}"><img src="{% include misc-3d-_url_img.html p=1 t=1 %}" width="60" height="60" alt="" class="f-left" /></a>
+		<a href="{% include misc-3d-_url_page.html %}">{{ p[1] }}</a><br />{{ p[1] }}</p>
+{% endif %}
+{% endfor %}
+{% else %}
+<h3>Environments</h3>
+{% for env in site.3d.environments %}
+		<p class="box clear"><a href="{% include misc-3d-_url_img.html k=1 %}"><img src="{% include misc-3d-_url_img.html t=1 k=1 %}" width="60" height="60" alt="" class="f-left" />
+		{{ env[1].name }}</a><br />{{ env[1].desc }}</p>
+{% endfor %}
+{% endif %}
+	</div> <!-- /col50 -->
+
+	<hr class="noscreen" />
+
+	<!-- Right column -->
+	<div class="col50 f-right">
+
+		<h3>Browser</h3>
+
+		<ul class="ul-style01">
+{% for p in active_area.pages %}
+{% if page.page != 'base' and p[0] == page.page %}
+			<li><em>{{ p[1] }}</em>
+				<ul>
+					<li>Download as
+						<ul>
+							{% for env in site.3d.environments %}
+							<li><a href="{% include misc-3d-_url_img.html k=1 %}">{{ env[1].name }}</a></li>
+							{% endfor %}
+						</ul>
+					</li>
+				</ul>
+			</li>
+{% else %}
+			<li><a href="{% include misc-3d-_url_page.html %}">{{ p[1] }}</a></li>
+{% endif %}
+{% endfor %}
+		</ul>
+{% unless show_all %}
+		<h3>Downloads</h3>
+
+		<table class="table-style01">
+			<tr>
+				<th>Environment</th>
+				<th>Shortname</th>
+				<th>Download</th>
+			</tr>
+{% for env in site.3d.environments %}
+			<tr{% cycle '', ' class="bg"' %}>
+				<td>{{ env[1].name }}</td>
+				<td>{{ env[0] }}</td>
+				<td><a href="{% include misc-3d-_url_img.html k=1 %}">Click</a></td>
+			</tr>
+{% endfor %}
+		</table>
+{% endunless %}
+	</div> <!-- /col50 -->
+
+</div> <!-- /box -->

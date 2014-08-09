@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.blog.title }}</title>
+	<meta name="author" content="{{ site.blog.author.name }}">
+
+	{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+	{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{% endif %}
+
+	<link href="{{ site.blog.url }}/atom.xml" rel="alternate" title="{{ site.blog.title }}" type="application/atom+xml">
+	<link href="{{ site.blog.url }}/rss.xml" rel="alternate" title="{{ site.blog.title }}" type="application/rss+xml">
+	<link rel="canonical" href="{{ page.url }}">
+	<link href="http://p.cdn.victorz.ca/blog/_design/favicon.png" rel="shortcut icon">
+	<link href="http://p.cdn.victorz.ca/blog/_design/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+	<!--[if lt IE 9]><script src="http://p.cdn.victorz.ca/blog/_design/js/html5.js"></script><![endif]-->
+	<script src="http://p.cdn.victorz.ca/js/jquery-latest.js"></script>
+	<script src="http://p.cdn.victorz.ca/js/copyyear.js"></script>
+	<script src="http://p.cdn.victorz.ca/blog/_design/js/scripts.js"></script>
+	<script type="text/x-mathjax-config">
+	MathJax.Hub.Config({
+		extensions: ["tex2jax.js"],
+		jax: ["input/TeX", "output/HTML-CSS"],
+		tex2jax: {
+			inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+			displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+			processEscapes: true
+		},
+		TeX: {
+			extensions: ["AMSmath.js", "AMSsymbols.js"]
+		},
+		"HTML-CSS": { availableFonts: ["TeX"] }
+	});
+	</script>
+	<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
+</head>
+
+<body>
+	<header id="header" class="inner">
+		<nav>
+			<ul>
+			  <li><a href="{{ site.blog.url }}/">Home</a></li>
+			  <li><a href="{{ site.blog.url }}/software.html">Software List</a></li>
+			  <li><a href="{{ site.blog.url }}/archives.html">Archives</a></li>
+			  <li><a href="{{ site.blog.url }}/tags.html">Tags</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div style="text-align:center"><script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=blog_head"></script></div>
+	<div id="content" class="inner">{{ content }}</div>
+	<div style="text-align:center"><script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=blog_foot"></script></div>
+	<footer id="footer" class="inner">
+		<div class="social alignright">
+			<a class="rss" href="{{ site.blog.url }}/atom.xml">Atom 1.0</a>
+			<a class="rss" href="{{ site.blog.url }}/rss.xml">RSS 2.0</a>
+			<a class="animate-off" href="#animate" onclick="return toggle_animation()">Animation Off</a>
+		</div>
+		<p>Copyright &copy; 2009-<span id="copyyear">now</span> <a href="{{ site.blog.author.url }}">{{ site.blog.author.name }}</a> &mdash; Adapted from tommy351 (Tommy Chen)'s <a href="https://github.com/tommy351/octopress-theme-phase"><i>Phase</i> template</a> (MIT License)</p>
+		<div class="clearfix"></div>
+	</footer>
+	<script type="text/javascript">
+	(function($){
+		$('.entry-content').each(function(i){
+			var _i = i;
+			$(this).find('img').each(function(){
+			var alt = $(this).attr('alt');
+
+			if (alt == '' || typeof alt == 'undefined'){
+				$(this).wrap('<a href="'+$(this).attr('src')+'" class="fancybox" rel="gallery'+_i+'" />');
+			} else {
+				$(this).after('<span class="caption">'+alt+'</span>').wrap('<a href="'+$(this).attr('src')+'" class="fancybox" title="'+alt+'" rel="gallery'+_i+'" />');
+			}
+			});
+		});
+		$('.fancybox').fancybox();
+	})(jQuery);
+	</script>
+	<div id="phasebeam"><canvas></canvas><canvas></canvas><canvas></canvas></div>
+</body>
+</html>

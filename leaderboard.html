@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Lazyboard</title>
+		<script src="https://js.simperium.com/v0.1/"></script>
+		<script src="http://p.cdn.victorz.ca/js/jquery-latest.js"></script>
+		<script src="http://tinysort.sjeiti.com/dist/jquery.tinysort.min.js"></script>
+		<script src="http://p.cdn.victorz.ca/js/jquery.timeago.js"></script>
+		<script>
+function received_data(data, first) {
+	console.log(data);
+	var leaderboard = $('#leaderboard');
+	for(var i in data) {
+		if(!data[i]) continue;
+		var row = leaderboard.find('tr#poke-' + data[i][1]);
+		if(row.length) {
+			// check if it can be skipped?
+			// if(false) continue;
+			// if(!first) // animation?
+		} else {
+			row = $('<tr>');
+			row.attr('id', 'poke-' + data[i][1]);
+			row.append($('<td>'));
+			row.append($('<td>'));
+			row.append($('<td>'));
+			row.append($('<td>'));
+			row.append($('<td>'));
+			leaderboard.append(row);
+		}
+		var cols = row.find('td');
+		cols.eq(0).text('?');
+		cols.eq(1).html('<img src="https://graph.facebook.com/' + data[i][1] + '/picture" width="50" height="50">');
+		cols.eq(2).html('<a href="https://www.facebook.com/' + data[i][1] + '">' + data[i][2] + '</a>');
+		if(data[i][3] >= 1000)
+			cols.eq(3).text((data[i][3] / 1000).toFixed(1) + 'K');
+		else
+			cols.eq(3).text(data[i][3]);
+		cols.eq(3).attr('alt', data[i][3]);
+		cols.eq(4).text((new Date(data[i][0] * 1000)).toString());
+		cols.eq(4).attr('title', (new Date(data[i][0] * 1000)).toISOString());
+		cols.eq(4).attr('data-timestamp', data[i][0]);
+		cols.eq(4).data("timeago", null).timeago();
+	}
+	var rows = leaderboard.find('tr');
+	rows.tsort('td:eq(3)', {order:'desc', attr:'alt'}, 'td:eq(4)', {order:'asc', attr:'data-timestamp'});
+	rows.each(function(index) {
+		$(this).find('td:eq(0)').text(index + 1);
+	});
+}
+// Initialization scripts
+$(document).ready(function () {	
+	var simperium = new Simperium('brake-foods-bc7', { token : 'ce4832ce12e24ee6860886d9b4567b12'});
+	var bucket = simperium.bucket('stats');
+	bucket.on('notify_init', function(id, data) {
+		if(id == 'p')
+			received_data(data, true);
+		else {
+			console.log(id + " was updated to");
+			console.log(data);
+		}
+	});
+	bucket.on('notify', function(id, data) {
+		if(id == 'p')
+			received_data(data);
+		else {
+			console.log(id + " was updated to");
+			console.log(data);
+		}
+	});
+	bucket.start();
+});
+		</script>
+	</head>
+	<body>
+		<h1>Leaderboard of Noobs (Lazyboard)</h1>
+		<p>This page has realtime updates. This page is called "lazyboard" because it has no stylesheet and no further development is planned.</p>
+		<table>
+			<thead>
+			<tr>
+				<th>Position</th>
+				<th>Image</th>
+				<th>Name</th>
+				<th>Total Pokes</th>
+				<th>Last Poke</th>
+			</tr>
+			</thead>
+			<tbody id="leaderboard"></tbody>
+		</table>
+	</body>
+</html>

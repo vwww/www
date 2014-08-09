@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Victor's Downloads | Get JavaScript for the full experience!</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta name="Keywords" content="victor,victorzheng,zheng,websites,downloads,games" />
+	<meta name="Description" content="Victor's Downloads; Listing of my downloads!" />
+	<link rel="stylesheet" type="text/css" href="http://p.cdn.victorz.ca/dl/style.css" />
+	<link type="image/icon" rel="icon" href="http://p.cdn.victorz.ca/dl/favicon.ico" />
+	<script type="text/javascript" src="http://p.cdn.victorz.ca/js/jquery-latest.js"></script>
+	<script type="text/javascript" src="http://p.cdn.victorz.ca/dl/date.js"></script>
+	<script type="text/javascript" src="http://p.cdn.victorz.ca/dl/index.js"></script>
+</head>
+<body>
+	<div id="container">
+		<p align="center"><img src="http://p.cdn.victorz.ca/dl/logo.png" alt="logo" /></p>
+		<h1><img src="http://p.cdn.victorz.ca/dl/i/download.png" alt="downstream" /> Victor's AJAX Downloads <img src="http://p.cdn.victorz.ca/dl/i/upload.png" alt="upstream" /></h1>
+		<div id="breadcrumbs"><img src="http://p.cdn.victorz.ca/dl/i/here.png" alt="path" /> <span id="breadcrumbpath">[Loading]</span> (<span id="breadcrumbsz">Unsized</span>)</div>
+		<div id="listingcontainer">
+			<div id="listingheader">
+				<div id="header-i" class="headersortable"><a href="javascript:setsorting('i')">File<img id="sort-i" src="http://p.cdn.victorz.ca/dl/i/trans.gif" alt="sort-file"/></a></div>
+				<div id="header-s" class="headersortable"><a href="javascript:setsorting('s');">Size<img id="sort-s" src="http://p.cdn.victorz.ca/dl/i/trans.gif" alt="sort-size"/></a></div>
+				<div id="header-r" class="headersortable"><a href="javascript:setsorting('r')">Remarks<img id="sort-r" src="http://p.cdn.victorz.ca/dl/i/trans.gif" alt="sort-remarks"/></a></div>
+			</div>
+			<div id="listing">
+				<div><a href="#" class="root" onclick="newDir('/')" title="Root"><img src="http://p.cdn.victorz.ca/dl/i/root.png" alt="Root" /><strong>/.</strong> <em id="roots">-</em> <i id="rootl">-</i></a></div>
+				<div><a class="up" onclick="newDir('..')" title="Up"><img src="http://p.cdn.victorz.ca/dl/i/up.png" alt="Folder" /><strong>..</strong> <em id="ups">-</em> Move up the branches!</a></div>
+				<div><a class="loading"><img src="http://p.cdn.victorz.ca/dl/i/loading.png" alt="root"/><strong>Loading</strong> <em>Unknown</em> Possible malfunction!</a></div>
+			</div>
+			<div id="upload">
+				<div id="uploadtitle">
+					<strong>File Upload</strong> (Max Filesize: <span id="usize">Disallowed</span>)
+					<div class="upload-msg">Upload requires JavaScript!</div>
+				</div>
+				<div id="uploadcontent">
+				<!--
+				<form method="post" action="" enctype="multipart/form-data" onclick="return false">
+					<input type="file" name="file" /><input id="uploadbtn" type="submit" value="Upload" disabled="disabled" />
+				</form>
+				-->
+				<!--<input id="file_upload" name="file_upload" type="file" />-->
+				<b>Uploads currently disabled! Maybe an Uploadify form will be added in the future&hellip;</b><br />
+				You may upload: *.gm* (alphanumeric) files, but only 10 files can exist at once!
+				</div>
+			</div>
+			<div align="center">
+				<br /><script type="text/javascript" src="http://d.cdn.victorz.ca/online.js.php?o=b"></script>
+				<br /><script type="text/javascript" src="http://d.cdn.victorz.ca/a.php?a=dl_foot"></script>
+			</div>
+		</div>
+	</div>
+	<div id="copy">
+		&copy; 2008 - <span id="now">Now</span> <a href="http://victorz.ca">Victor Zheng</a>. Powered by Victor's Downloads,<br />
+		a modified version of Evoluted's <a href="http://www.evoluted.net/thinktank/web-development/php-directory-listing-script" rel="nofollow">PHP Directory Listing Script</a>.<br />
+		This page has valid <a href="http://validator.w3.org/check?uri=referer">XHTML</a> and <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>!<br />
+	</div>
+</body>
+</html>

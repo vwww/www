@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Compound Interest Graph</title>
+
+	<script type="text/javascript" src="http://p.cdn.victorz.ca/js/jquery-latest.js"></script>
+	<script type="text/javascript" src="http://p.cdn.victorz.ca/misc/compound.js"></script>
+</head>
+<body>
+	<form style="text-align:center">
+		Start Date: <input type="date" id="startDate" value="2014-04-14">
+		Principal: <input type="number" id="principal" value="10">
+		Interest Rate (%/year): <input type="number" id="interest" value="60">
+		Terms (years): <input type="number" id="terms" value="50">
+		<button type="button" onclick="plotData()">Calculate</button>
+	</form>
+	<div id="container" style="height: 400px; min-width: 310px"></div>
+
+	<script src="http://code.highcharts.com/stock/highstock.js"></script>
+	<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+</body>
+</html>

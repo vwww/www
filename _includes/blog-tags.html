@@ -1,0 +1,18 @@
+{% if page.is_page %}
+<a href="">[pages]</a>
+{% else %}
+{% for tag in post.tags %}
+	{% assign contained = false %}
+	{% assign tag_lower = tag | downcase %}
+	{% for cat in post.categories %}
+		{% if cat == tag_lower %}
+			{% assign contained = true %}
+			{% break %}
+		{% endif %}
+	{% endfor %}
+	<a href="{{ site.blog.url }}/tags.html#{{ tag }}">{% if tag == tag_cur %}<mark>{% endif %}{% if contained %}<strong>{% endif %}{{ tag }}{% if contained %}</strong>{% endif %}<sup>{{ site.tags[tag].size }}</sup>{% if tag == tag_cur %}</mark>{% endif %}</a>
+{% endfor %}
+{% assign y = post.date | date: '%Y' %}
+<a href="{{ site.blog.url }}/archives.html#{{ y }}">{% if y == year_cur %}<mark>{% endif %}[{{ y }}]<sup>{{ yc }}</sup>{% if y == year_cur %}</mark>{% endif %}</a>
+<a href="{{ site.blog.url }}/archives.html#{{ y }}">[posts]<sup>{{ site.posts.size }}</sup></a>
+{% endif %}

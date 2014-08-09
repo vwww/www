@@ -1,0 +1,94 @@
+/* ----------------------------------------------------------------------------------------------------------
+Output device: screen, projection
+display; position; z-index; float; clear; width; height; overflow; margin; padding; border; background; align; font;
+1) HTML tags
+2) HTML styles
+3) Layout
+4) Page: Homepage
+5) Others
+---------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------
+1) HTML tags
+---------------------------------------------------------------------------------------------------------- */
+
+body {background-color:#E7F4FE; color:#000}
+
+a {color:#798933;}
+a:hover {color:#586325;}
+
+h3.title {border-bottom:1px solid #DFDFDF; color:#000;}
+
+/* ----------------------------------------------------------------------------------------------------------
+2) HTML styles
+---------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------
+3) Layout
+---------------------------------------------------------------------------------------------------------- */
+
+#main {background-color:#FFF;}
+
+#header {background-color:#ff8598; color:#FFF;}
+#header a {color:#FFF;}
+
+#tray {background-color:#2f2f2f; color:#FFF;}
+#tray a {color:#FFF;}
+#tray li#tray-active a {color:#c9d787;}
+
+.nav a {border-top:1px solid #e5e5e5; background-color:#d0d0d0 !important; color:#000 !important;}
+.nav #nav-active a {background-color:#ff8598 !important; color:#FFF !important;}
+.nav #nav-active ul li a {border-top:1px solid #525252; background-color:#2f2f2f !important; color:#c9d787 !important;}
+
+#search {border-top:1px solid #f2f2f2; background-color:#d0d0d0;}
+#search-input {background:#FFF;}
+#search-submit {background:#2F2F2F; color:#FFF;}
+
+#footer, #footer a {color:#2F2F2F;}
+
+/* ----------------------------------------------------------------------------------------------------------
+4) Page: Homepage
+---------------------------------------------------------------------------------------------------------- */
+
+#topstory-top, #topstory {background-color:#ebf0d3;}
+#topstory-desc .info, #topstory-desc .info a, .article .article-desc .info, .article .article-desc .info a {color:#5F5F5F;}
+#topstory-desc .info a:hover, .article .article-desc .info a:hover {color:#2F2F2F;}
+#topstory-list {border-top:1px solid #f1f6e4; background-color:#e2eac0;}
+#topstory-desc h2 a {color:#FE5469;}
+#topstory-desc h2 a:hover {color:#FF1E40;}
+
+.box-01-top, .box-01-top-b {background-color:#DFE9BE; color:#000;}
+.box-01-top-b .f-right {color:#798933;}
+.box-01 .bg {border-top:1px solid #DFE9BE; border-bottom:1px solid #DFE9BE; background:#F3F8EA;}
+
+    .news dt {color:#FE5469;}
+    .news dd span {color:#5f5f5f;}
+
+.box-02-top, .box-02-top-b {background-color:#ffe5dc; color:#000;}
+
+    .mostreaded span {color:#5F5F5F;}
+    .mostreaded a {color:#2F2F2F;}
+    .mostreaded a:hover {color:#000;}
+
+/* ----------------------------------------------------------------------------------------------------------
+5) Others
+---------------------------------------------------------------------------------------------------------- */
+
+.style-switcher {color:#000;}
+
+/* Extras */
+body {background-image:url("design/8/bg.gif");}
+#header {background-image:url("design/8/header.gif");}
+#footer {background-image:url("design/8/footer.gif");}
+#topstory-top {background-image:url("design/8/topstory-top.gif");}
+#topstory-bottom {background-image:url("design/8/topstory-bottom.gif");}
+.box-01-top {background-image:url("design/8/box-01-top.gif");}
+.box-01-top-b {background-image:url("design/8/box-01-top-b.gif");}
+.box-01-bottom {background-image:url("design/8/box-01-bottom.gif");}
+.box-01 {background-image:url("design/8/box-01.gif");}
+.box-02-top {background-image:url("design/8/box-02-top.gif");}
+.box-02-top-b {background-image:url("design/8/box-02-top-b.gif");}
+.box-02-bottom {background-image:url("design/8/box-02-bottom.gif");}
+.box-02 {background-image:url("design/8/box-02.gif");}
+.more {background-image:url("design/8/arrow.gif");}
+.style-switcher-8 {background-image:url("design/shared/nav-link.gif");}

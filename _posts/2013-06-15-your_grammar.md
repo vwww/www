@@ -12,11 +12,11 @@ Notify-Once Restriction: the bot will <mark>try not to correct you if you have b
 
 Follower Restrictions: the bot <mark>automatically adjusts the follower count threshold</mark> (slightly) every 15 tweets or 16 hours, whichever occurs earlier, to maintain approximately 1 tweet/3 hours for each of the 14 checks. Some of the checks do not occur often enough, so this results in <mark>less than 120 tweets/day</mark>. Probably only 75% (90 tweets/day) will occur. Also, the <mark>minimum follower:following ratio is 3:2 (1.5)</mark>.
 
-Corrections (tweets): ( [statuses/user\_timeline](https://twitter.com/_grammar_) ) or \[ [from:\_grammar\_](https://twitter.com/search?q=from%3A_grammar_&amp;mode=realtime) \] (not recommended)  
-<mark>Replies: \[ [to:\_grammar\_](https://twitter.com/search?q=to%3A_grammar_&amp;mode=realtime) \]</mark> or \[ [@\_grammar\_ -from:\_grammar\_](https://twitter.com/search?q=%40_grammar_%20-from%3A_grammar_&amp;mode=realtime) \] (mentions)  
-Mentions without replies: \[ [@\_grammar\_ -from:\_grammar\_ -to:\_grammar\_](https://twitter.com/search?q=%40_grammar_%20-from%3A_grammar_%20-to%3A_grammar_&amp;mode=realtime) \]  
+Corrections (tweets): ( [statuses/user\_timeline](https://twitter.com/_grammar_) ) or \[ [from:\_grammar\_](https://twitter.com/search?mode=realtime&amp;q=from%3A_grammar_) \] (not recommended)  
+<mark>Replies: \[ [to:\_grammar\_](https://twitter.com/search?mode=realtime&amp;q=to%3A_grammar_) \]</mark> or \[ [@\_grammar\_ -from:\_grammar\_](https://twitter.com/search?mode=realtime&amp;q=%40_grammar_%20-from%3A_grammar_) \] (mentions)  
+Mentions without replies: \[ [@\_grammar\_ -from:\_grammar\_ -to:\_grammar\_](https://twitter.com/search?mode=realtime&amp;q=%40_grammar_%20-from%3A_grammar_%20-to%3A_grammar_) \]  
 This bot used to favorite every reply, but this action has been reversed.  
-Raging responses: \[ [@\_grammar\_ -from:\_grammar\_ fuck](http://topsy.com/s?q=%40_grammar_%20-from%3A_grammar_%20fuck&window=m) \]
+Raging responses: \[ [to:\_grammar\_ fuck](https://twitter.com/search?mode=realtime&amp;q=to%3A_grammar_%20fuck) \]
 
 <mark>Source code: available on [GitHub](https://github.com/theonlypwner/grammar)</mark>
 

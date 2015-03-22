@@ -41,8 +41,9 @@ function received_data(data, first) {
 		cols.eq(4).attr('data-timestamp', data[i][0]);
 		cols.eq(4).data("timeago", null).timeago();
 	}
-	tinysort(leaderboard.find('tr'), {selector: 'td:nth-child(4)', order:'desc', attr:'alt'}, {selector: 'td:nth-child(5)', order:'asc', attr:'data-timestamp'});
-	leaderboard.find('tr').each(function(index) {
+	var rows = leaderboard.find('tr');
+	tinysort($.makeArray(rows), {selector: 'td:nth-child(4)', order:'desc', attr:'alt'}, {selector: 'td:nth-child(5)', order:'asc', attr:'data-timestamp'});
+	rows.each(function(index) {
 		$(this).find('td:eq(0)').text(index + 1);
 	});
 }

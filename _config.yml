@@ -7,8 +7,7 @@
 
 # our settings
 timezone: America/Edmonton
-# pygments fails as of Jekyll 2.2.0
-highlighter: true
+highlighter: pygments
 markdown: redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'fenced_code_blocks', 'autolink', 'disable_indented_code_blocks', 'strikethrough', 'underline', 'highlight', 'footnotes']

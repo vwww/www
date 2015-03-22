@@ -42,8 +42,7 @@ function received_data(data, first) {
 		cols.eq(4).data("timeago", null).timeago();
 	}
 	var rows = leaderboard.find('tr');
-	tinysort($('#leaderboard').find('tr'), 'td:eq(3)', {order:'desc', attr:'alt'}, 'td:eq(4)', {order:'asc', attr:'data-timestamp'});
-	rows.tsort('td:eq(3)', {order:'desc', attr:'alt'}, 'td:eq(4)', {order:'asc', attr:'data-timestamp'});
+	tinysort(rows, {selector: 'td:nth-child(4)', order:'desc', attr:'alt'}, {selector: 'td:nth-child(5)', order:'asc', attr:'data-timestamp'});
 	rows.each(function(index) {
 		$(this).find('td:eq(0)').text(index + 1);
 	});

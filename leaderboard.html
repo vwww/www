@@ -4,7 +4,7 @@
 		<title>Lazyboard</title>
 		<script src="https://js.simperium.com/v0.1/"></script>
 		<script src="http://p.cdn.victorz.ca/js/jquery-latest.js"></script>
-		<script src="http://tinysort.sjeiti.com/dist/jquery.tinysort.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.1.1/tinysort.min.js"></script>
 		<script src="http://p.cdn.victorz.ca/js/jquery.timeago.js"></script>
 		<script>
 function received_data(data, first) {
@@ -42,6 +42,7 @@ function received_data(data, first) {
 		cols.eq(4).data("timeago", null).timeago();
 	}
 	var rows = leaderboard.find('tr');
+	tinysort($('#leaderboard').find('tr'), 'td:eq(3)', {order:'desc', attr:'alt'}, 'td:eq(4)', {order:'asc', attr:'data-timestamp'});
 	rows.tsort('td:eq(3)', {order:'desc', attr:'alt'}, 'td:eq(4)', {order:'asc', attr:'data-timestamp'});
 	rows.each(function(index) {
 		$(this).find('td:eq(0)').text(index + 1);

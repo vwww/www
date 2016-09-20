@@ -8,7 +8,7 @@
 # our settings
 timezone: America/Edmonton
 highlighter: pygments
-markdown: redcarpet
+#markdown: redcarpet
 redcarpet:
   extensions: ['smart', 'tables', 'fenced_code_blocks', 'autolink', 'disable_indented_code_blocks', 'strikethrough', 'underline', 'highlight', 'footnotes']
 permalink: /blog/:year/:month/:title

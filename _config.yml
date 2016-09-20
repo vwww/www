@@ -24,7 +24,7 @@ blog:
     url: http://victorz.ca
   url: http://vwww.github.io/www/blog
   short_url: victorz.ca/blog
-base: /www/ # used by blog
+base: /www # used by blog
 3d:
   location: /misc/3d/
   areas:

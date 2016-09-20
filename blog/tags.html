@@ -35,7 +35,7 @@ title: Tags
 			<section class="archives"><div class="year">{{ this_year }}</div>
 		{% endunless %}
 		<article class="archive">
-			<h1 class="title"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+			<h1 class="title"><a href="{{ site.base }}{{ post.url }}">{{ post.title }}</a></h1>
 			<footer>
 				<time datetime="{{ post.date | datetime | date_to_xmlschema }}">{{ post.date | date: "%b %e %Y" }}</time>
 				<div class="tags">{% include blog-tags.html %}</div>

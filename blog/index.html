@@ -16,7 +16,7 @@ layout: blog
 {% capture content %}
 	{{ post.excerpt }}
 	{% if post.excerpt != post.content %}
-	<p class="readmore"><a href="{{ post.url }}">Read more&hellip;</a></p>
+	<p class="readmore"><a href="{{ site.base }}{{ post.url }}">Read more&hellip;</a></p>
 	{% endif %}
 {% endcapture %}
 <article class="post">{% include blog-article.html %}</article>

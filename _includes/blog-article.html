@@ -1,5 +1,5 @@
 <header>
-	<h1 class="title"><a href="{{ base }}{{ post.url }}">{{ post.title }}</a></h1>
+	<h1 class="title"><a href="{{ site.base }}{{ post.url }}">{{ post.title }}</a></h1>
 	<time datetime="{{ post.date | date_to_xmlschema }}">
 		<span class="day">{{ post.date | date: "%e" }}</span><span class="month">{{ post.date | date: "%b %Y" }}</span><br />
 		<span class="time">{{ post.date | date: "%I:%M %p %Z" }}</span>
@@ -25,6 +25,6 @@
 	</div>
 	<footer class="meta">
 		<div class="tags">{% include blog-tags.html %}</div>
-		<a class="permalink" href="{{ base }}{{ post.url }}">Permalink</a>
+		<a class="permalink" href="{{ site.base }}{{ post.url }}">Permalink</a>
 	</footer>
 </div>

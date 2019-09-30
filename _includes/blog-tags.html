@@ -5,7 +5,8 @@
 	{% assign contained = false %}
 	{% assign tag_lower = tag | downcase %}
 	{% for cat in post.categories %}
-		{% if cat == tag_lower %}
+		{% assign cat_lower = cat | downcase %}
+		{% if cat_lower == tag_lower %}
 			{% assign contained = true %}
 			{% break %}
 		{% endif %}
